@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="w-[80%] h-[10vh] flex items-center ml-auto mr-auto">
+    <i class="fa fa-address-book fa-lg text-[#FF4F5A]" aria-hidden="true"></i>
+    <p class="pl-[10px] font-bold text-2xl text-[#FF4F5A]">Todo List</p>
+</div>
+<div class="w-[80%] ml-auto mr-auto flex flex-col items-center justify-center">
+    <p class="text-3xl font-bold w-[500px] text-center mt-[5vh] mb-[5vh]">
+        Organiza las actividades de tu día a día usando Todo daily
+    </p>
+    <div class="flex flex-col items-center w-full h-[70vh]">
+        <a href="tasks" class="cursor-pointer flex items-center justify-center w-[200px] bg-[#FF4F5A] h-[56px] mb-[2vh] rounded-lg text-white text-xl font-bold">
+            Comencemos!
+        </a>
+        <img th:src="@{/images/4005526.jpg}" alt="hola" class="h-full w-full object-cover object-top">
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de tareas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="bg-[#FF4F5A] w-full h-[10vh] pl-[10px] flex items-center justify-start sticky top-0">
+    <i class="fa fa-address-book fa-lg text-white" aria-hidden="true"></i>
+    <p class="pl-[10px] font-bold text-2xl text-white">Todo List</p>
+</div>
+<div class="flex flex-row">
+    <div class="bg-[#F9F9F9] w-[15%]">
+        <a href="tasks" class="cursor-pointer w-[80%] ml-auto mr-auto flex flex-row items-center mt-[15px] text-[#FF4F5A]">
+            <i class="fa fa-list pr-[10px] fa-lg" aria-hidden="true"></i>
+            <p>Lista de tareas</p>
+        </a>
+        <a href="add" class="cursor-pointer w-[80%] ml-auto mr-auto flex flex-row items-center mt-[15px]">
+            <i class="fa fa-plus-circle pr-[10px] fa-lg" aria-hidden="true"></i>
+            <p>Agregar tareas</p>
+        </a>
+    </div>
+    <div class="h-[90vh] w-[85%] bg-white flex items-center justify-center">
+        <div class="w-[90%] h-[90%]">
+            <p class="text-2xl text-[#FF4F5A] font-bold mb-[3%]">Actividades por hacer</p>
+            <div th:each="task: ${tasks}" class="flex flex-row">
+                <div class="w-[90%] min-h-[80px] flex flex-col border-[1px] mb-[10px] stroke-[#E3E3E3] p-[10px] justify-around rounded-[8px]">
+                    <div class="flex justify-between items-center">
+                        <p th:text="${task.name}" class="text-xl"></p>
+                        <p th:text="${task.startDate}" class="text-xl"></p>
+                    </div>
+                    <p th:text="${task.description}" class="text-lg text-[#787878]"></p>
+                </div>
+                <a th:href="@{/delete/{id}(id=${task.id})}" class="cursor-pointer w-[8%] ml-auto mr-auto h-[80px] flex justify-center items-center bg-[#FF4F5A] rounded-[8px] h">
+                    <i class="fa fa-trash fa-2x text-white" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
